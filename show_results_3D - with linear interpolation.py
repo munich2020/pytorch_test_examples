@@ -75,17 +75,17 @@ X=X.flatten()
 Y=Y.flatten()
 Z=np.array(accuracy).flatten()
 Z2=np.array(time).flatten()
-print(X)
-print(Y)
-print(Z)
-
+print('X',X)
+print('Y',Y)
+print('Z',Z)
+print('nNodes', nNodes[-1]/8)
 
 #Interpolation of new values
 xi=[]
 yi=[]
-for i in range(nNodes[-1]/8):
+for i in range(int(nNodes[-1]/8)):
     xi.append(8+8*i)
-for i in range(mNodes[-1]/8)):
+for i in range(int(mNodes[-1]/8)):
     yi.append(8+8*i)
 triang = tri.Triangulation(X, Y)
 interpolator = tri.LinearTriInterpolator(triang, Z)
